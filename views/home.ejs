@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-base-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chett</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+
+  <nav class="bg-white border-gray-200">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="flex items-center">
+        <div class="h-8 w-8">
+          <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M2,21h8a1,1,0,0,0,0-2H3.071A7.011,7.011,0,0,1,10,13a5.044,5.044,0,1,0-3.377-1.337A9.01,9.01,0,0,0,1,20,1,1,0,0,0,2,21ZM10,5A3,3,0,1,1,7,8,3,3,0,0,1,10,5Zm13,8.5v5a.5.5,0,0,1-.5.5h-1v2L19,19H14.5a.5.5,0,0,1-.5-.5v-5a.5.5,0,0,1,.5-.5h8A.5.5,0,0,1,23,13.5Z"></path></g></svg>
+        </div>
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="self-centertext-blue-600 text-2xl font-semibold whitespace-nowrap">Chett</span>
+      </a>
+      </div>      
+      <div class="flex items-center space-x-4">
+        <a href="/" name="home" class="text-lg font-medium text-gray-900 hover:text-blue-600">Dashboard</a>
+        <a href="/accounts" class="text-lg font-medium text-gray-900 hover:text-blue-600">Accounts</a>
+        <a href="/pricing" class="text-lg font-medium text-gray-900 hover:text-blue-600">Pricing</a>
+        <a href="/data" class="text-lg font-medium text-gray-900 hover:text-blue-600">Data</a>
+      </div>
+  </nav>
+  <main>
+
+
+    <div class="mb-3 w-full flex justify-between">
+      <div class="w-2/4">
+        <h1 class="ml-14 font-semibold text-3xl">Customer Info</h1>
+      </div>
+      <div class="relative mb-4 mr-14 flex flex-wrap items-stretch">
+        <input
+          type="search"
+          class="relative m-0 -mr-0.5 block min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="button" />
+    
+        <!--Search button-->
+        <button
+          class="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+          type="button"
+          id="button"
+          data-te-ripple-init>
+          Search
+        </button>
+      </div>
+    </div>
+
+
+  <div class="relative overflow-x-auto ">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead class="text-xs text-gray-900 uppercase bg-gray-100">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Customer
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Contact
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Contact Number
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Sales Rep
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white font-semibold border-b-2">
+                <th scope="row" class="px-6 py-4 text-gray-900 whitespace-nowrap ">
+                    Example Company
+                </th>
+                <td class="px-6 py-4">
+                    John Doe
+                </td>
+                <td class="px-6 py-4">
+                    +1 123 456 7890
+                </td>
+                <td class="px-6 py-4">
+                    Tim Smith
+                </td>
+            </tr>
+                      <tr class="bg-white font-semibold border-b-2">
+                <th scope="row" class="px-6 py-4 text-gray-900 whitespace-nowrap ">
+                    Example Company
+                </th>
+                <td class="px-6 py-4">
+                    John Doe
+                </td>
+                <td class="px-6 py-4">
+                    +1 123 456 7890
+                </td>
+                <td class="px-6 py-4">
+                    Tim Smith
+                </td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+  </div>
+
+
+  </main>
+</body>
+</html>
+

@@ -4,7 +4,6 @@ const app = express();
 const port = 4050;
 
 // view engine setup
-app.use(expressLayouts)
 app.set('view engine', 'ejs');
 app.set('views', 'views')
 app.set('layout', 'layout/main')
@@ -13,16 +12,12 @@ app.get('/', (req, res) => {
     res.render('home'); 
   });
 
-  app.get('/accounts', (req, res) => {
-    res.render('accounts'); 
+  app.get('/customers', (req, res) => {
+    res.render('customers'); 
   });
 
-  app.get('/pricing', (req, res) => {
-    res.render('pricing'); 
-  });
-
-  app.get('/data', (req, res) => {
-    res.render('data'); 
+  app.get('/products', (req, res) => {
+    res.render('products'); 
   });
   
 app.listen(port, () => {

@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')
 const bodyParser = require('body-parser');
 const app = express()
-const port = 4051;
+const port = 4050;
 
 const Product = require('./models/product');
 

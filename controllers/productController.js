@@ -1,28 +1,25 @@
-app.post('/productADD', async (req, res) => {
-    try {
-      const { productName, priceUSD, priceCAD } = req.body;
+async function deleteProduct(productId) {
+    const confirmDelete = confirm('Are you sure you want to delete this product?');
   
-      const newProduct = new Product({
-        productName,
-        priceUSD,
-        priceCAD,
-      });
+    if (confirmDelete) {
+        try {
+            const response = await fetch(`/products/delete/${productId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
   
-      await newProduct.save();
-  
-      res.redirect('/products');
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
+            if (response.ok) {
+                // Optional: Reload the page or update the UI after successful deletion
+                window.location.reload(); // Reload the page
+            } else {
+                console.error('Failed to delete product');
+                // Handle error scenario
+            }
+        } catch (error) {
+            console.error('Error during fetch:', error);
+            // Handle error scenario
+        }
     }
-  });
-  
-  app.get('/products', async (req, res) => {
-    try {
-      const products = await Product.find();
-      res.render('products', { products });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
-    }
-  });
+  }

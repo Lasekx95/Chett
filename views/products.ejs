@@ -6,6 +6,7 @@
     <title>Chett</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../app.js"></script>
 </head>
 <body>
  <nav id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
@@ -114,13 +115,45 @@
                                         </g>
                                     </svg>
                                 </a>
-                                <a href="/products/delete/<%= product._id %>" onclick="return confirm('Are you sure you want to delete this product?')">
-                                    <svg class="w-8 h-8" fill="#000000" viewBox="0 0 24 24" id="delete-file-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M18,21a1,1,0,0,0,1-1V4a1,1,0,0,0-1-1H9L5,7V20a1,1,0,0,0,1,1Z" style="fill: #ffffff; stroke-width: 2;"></path><line id="primary" x1="10.5" y1="10.5" x2="13.5" y2="13.5" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><line id="primary-2" data-name="primary" x1="13.5" y1="10.5" x2="10.5" y2="13.5" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><path id="primary-3" data-name="primary" d="M6,21a1,1,0,0,1-1-1V7L9,3h9a1,1,0,0,1,1,1V20a1,1,0,0,1-1,1Z" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
-                                </a>
+                                <button onclick="deleteProduct('<%= product._id %>')" type="button">
+                                    <svg class="w-8 h-8" fill="#000000" viewBox="0 0 24 24" id="delete-file-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line">
+                                        <g class="w-8 h-8" fill="#000000" viewBox="0 0 24 24" id="delete-file-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M18,21a1,1,0,0,0,1-1V4a1,1,0,0,0-1-1H9L5,7V20a1,1,0,0,0,1,1Z" style="fill: #ffffff; stroke-width: 2;"></path><line id="primary" x1="10.5" y1="10.5" x2="13.5" y2="13.5" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><line id="primary-2" data-name="primary" x1="13.5" y1="10.5" x2="10.5" y2="13.5" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><path id="primary-3" data-name="primary" d="M6,21a1,1,0,0,1-1-1V7L9,3h9a1,1,0,0,1,1,1V20a1,1,0,0,1-1,1Z" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
+                                    </svg>
+                                </button>
                             </div>
                         </td>
                     </tr>
                 <% }); %>
+
+                <script>
+                    async function deleteProduct(productId) {
+                        const confirmDelete = confirm('Are you sure you want to delete this product?');
+                
+                        if (confirmDelete) {
+                            try {
+                                const response = await fetch(`/products/delete/${productId}`, {
+                                    method: 'DELETE',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                        // Add any additional headers if needed
+                                    },
+                                });
+                
+                                if (response.ok) {
+                                    // Optional: Reload the page or update the UI after successful deletion
+                                    window.location.reload(); // Reload the page
+                                } else {
+                                    console.error('Failed to delete product');
+                                    // Handle error scenario
+                                }
+                            } catch (error) {
+                                console.error('Error during fetch:', error);
+                                // Handle error scenario
+                            }
+                        }
+                    }
+                </script>
+                
             </tbody>
         </table>
     </div>

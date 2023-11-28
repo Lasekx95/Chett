@@ -4,16 +4,48 @@ const mongoose = require('mongoose')
 const MongoStore = require('connect-mongo')
 const bodyParser = require('body-parser');
 const app = express()
-const port = 4050;
+const port = 4051;
+
+const Product = require('./models/product');
+
+//middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', 'views')
 app.set('layout', 'layout/main')
 
-app.use(bodyParser.urlencoded({ extended: false }));
+//product controllers
+app.post('/productADD', async (req, res) => {
+  try {
+    const { ProductName, priceUSD, priceCAD } = req.body;
 
-//mongoose.connect('mongodb://localhost/chett', { useNewUrlParser: true, useUnifiedTopology: true });
+    const newProduct = new Product({
+      ProductName,
+      priceUSD,
+      priceCAD,
+    });
+
+    await newProduct.save();
+
+    res.redirect('/products');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/products', async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.render('products', { products });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 
 app.get('/', (req, res) => {

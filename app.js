@@ -23,7 +23,11 @@ app.get('/', (req, res) => {
   app.get('/customer', (req, res) => {
     res.render('customerlayout'); 
   });
-  
+
+  app.get('/newproduct', (req, res) => {
+    res.render('newproduct'); 
+  });
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

@@ -81,35 +81,46 @@
                         Product Name
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Price $USD
+                        Price USD $
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Price $CDN
+                        Price CDN $
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Edit
+                        Edit/Delete
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-b">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            Traka 21
-                    </th>
-                    <td class="px-6 py-4">
-                        $1000
-                    </td>
-                    <td class="px-6 py-4">
-                        $800
-                    </td>
-                    <td>
-                        <a href="#">
-                            <svg class="w-8 h-8 ml-5" fill="#0088ff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#0088ff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20.548,3.452a1.542,1.542,0,0,1,0,2.182L12.912,13.27,9.639,14.361l1.091-3.273,7.636-7.636A1.542,1.542,0,0,1,20.548,3.452ZM4,21H19a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7H5V6h7a1,1,0,0,0,0-2H4A1,1,0,0,0,3,5V20A1,1,0,0,0,4,21Z"></path></g></svg>
-                        </a>
-                    </td>
-                </tr>
-
-
+                <% products.forEach(product => { %>
+                    <tr class="bg-white border-b">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            <%= product.ProductName %>
+                        </th>
+                        <td class="px-6 py-4">
+                            <%= product.priceUSD %>
+                        </td>
+                        <td class="px-6 py-4">
+                            <%= product.priceCAD %>
+                        </td>
+                        <td>
+                            <div class="flex">
+                                <a href="#">
+                                    <svg class="w-8 h-8 ml-5" fill="#0088ff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#0088ff">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path d="M20.548,3.452a1.542,1.542,0,0,1,0,2.182L12.912,13.27,9.639,14.361l1.091-3.273,7.636-7.636A1.542,1.542,0,0,1,20.548,3.452ZM4,21H19a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7H5V6h7a1,1,0,0,0,0-2H4A1,1,0,0,0,3,5V20A1,1,0,0,0,4,21Z"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="/products/delete/<%= product._id %>" onclick="return confirm('Are you sure you want to delete this product?')">
+                                    <svg class="w-8 h-8" fill="#000000" viewBox="0 0 24 24" id="delete-file-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M18,21a1,1,0,0,0,1-1V4a1,1,0,0,0-1-1H9L5,7V20a1,1,0,0,0,1,1Z" style="fill: #ffffff; stroke-width: 2;"></path><line id="primary" x1="10.5" y1="10.5" x2="13.5" y2="13.5" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><line id="primary-2" data-name="primary" x1="13.5" y1="10.5" x2="10.5" y2="13.5" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><path id="primary-3" data-name="primary" d="M6,21a1,1,0,0,1-1-1V7L9,3h9a1,1,0,0,1,1,1V20a1,1,0,0,1-1,1Z" style="fill: none; stroke: #ff5252; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                <% }); %>
             </tbody>
         </table>
     </div>

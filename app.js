@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
   app.get('/products', (req, res) => {
     res.render('products'); 
   });
+
+  app.get('/customer', (req, res) => {
+    res.render('customerlayout'); 
+  });
   
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

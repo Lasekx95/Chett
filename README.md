@@ -1,6 +1,6 @@
 # CRM - prototype
 
-This is a prototype of a web based CRM application, focusing on the basic functions required in CRM applications
+This is a prototype of a web based CMS application, focusing on the basic functions required in CMS applications
 
 ## Prerequisites
 

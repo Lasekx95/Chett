@@ -88,25 +88,6 @@ app.get('/deleteProduct/:id', async (req, res) => {
   }
 });
 
-app.get('/search', async (req, res) => {
-  try {
-    const searchTerm = req.query.term;
-    
-    // Perform a search in your database based on the searchTerm
-    const searchResults = await Product.find({
-      $or: [
-        { ProductName: { $regex: searchTerm, $options: 'i' } }, // Case-insensitive search on ProductName
-        // Add additional fields you want to search on
-      ],
-    });
-
-    res.json(searchResults);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
 
 app.get('/', (req, res) => {
     res.render('home'); 

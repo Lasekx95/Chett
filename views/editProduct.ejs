@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-base-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chett</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+ <nav id="default-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-slate-200">
+       <ul class="space-y-2 font-medium">
+        <li>
+          <div href="#" class="flex items-center p-2 text-gray-900 rounded-lg bg-gray-100 group">
+             <svg class="w-5 h-5" fill="#000000" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M489.818,30.958C473.194,11.89,450.165,0.914,424.975,0.054c-24.875-0.864-49.163,8.74-66.728,26.308 c-6.894,6.894-12.581,14.783-16.901,23.448c-1.527,3.058-4.994,4.844-8.418,4.359c-46.401-6.647-92.004,8.516-125.106,41.62 c-3.305,3.306-6.482,6.796-9.437,10.376c-6.68,8.084-16.421,13.322-27.429,14.745c-44.362,5.729-84.332,25.763-115.589,57.936 C19.711,215.55,0.081,264.149,0.097,315.693c0.013,44.166,14.459,86.154,41.037,120.349L5.332,471.843l34.713,34.713 l35.788-35.788c33.909,26.442,75.301,40.924,119.051,41.227c0.47,0.003,0.936,0.005,1.404,0.005 c52.444,0,101.696-20.393,138.817-57.514c31.459-31.458,50.864-71.395,56.116-115.492c1.152-9.663,6.303-18.717,14.503-25.492 c3.582-2.962,7.074-6.136,10.376-9.439c33.102-33.102,48.272-78.702,41.618-125.104c-0.496-3.454,1.507-6.964,4.979-8.73 c9.885-5.024,18.694-11.795,26.182-20.123C519.214,116.363,519.618,65.139,489.818,30.958z M452.37,117.285 c-3.43,3.816-7.439,6.904-11.919,9.18c-22.217,11.298-34.807,35.192-31.328,59.461c4.439,30.952-5.67,61.359-27.735,83.423 c-2.208,2.207-4.538,4.328-6.93,6.303c-17.972,14.849-29.332,35.282-31.983,57.532c-3.937,33.053-18.489,62.994-42.083,86.587 c-27.843,27.843-64.776,43.137-104.115,43.135c-0.349,0-0.704-0.002-1.054-0.005c-30.698-0.213-59.834-9.764-84.295-27.233 l54.992-54.992h82.4v-49.091h-33.308l85.38-85.38l-34.713-34.712l-85.38,85.38v-33.308h-49.091v82.4l-54.969,54.972 C36.144,344.24,40.91,264.178,90.578,213.053c23.449-24.135,53.418-39.163,86.668-43.459c23.4-3.026,44.349-14.448,58.987-32.166 c1.972-2.388,4.091-4.718,6.302-6.927c18.651-18.651,43.264-28.761,69.13-28.761c4.732,0,9.506,0.339,14.292,1.024 c24.492,3.521,48.308-8.967,59.319-31.05c1.952-3.917,4.536-7.496,7.68-10.64c8.103-8.103,18.861-12.369,30.339-11.959 c11.446,0.391,21.929,5.4,29.517,14.102C466.112,78.471,465.916,102.218,452.37,117.285z"></path> </g> </g> </g></svg>
+             <h1 class="ms-1">Chett - Time Access CMS</h1>
+          </div>
+       </li>
+          <li>
+             <a href="/" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                <svg class="w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                   <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z"/>
+                   <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z"/>
+                </svg>
+                <span class="ms-3">Dashboard</span>
+             </a>
+          </li>
+          <li>
+             <a href="/customers" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                   <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Customers</span>
+             </a>
+          </li>
+          <li>
+             <a href="/products" class="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 group">
+                <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                   <path d="M17 5.923A1 1 0 0 0 16 5h-3V4a4 4 0 1 0-8 0v1H2a1 1 0 0 0-1 .923L.086 17.846A2 2 0 0 0 2.08 20h13.84a2 2 0 0 0 1.994-2.153L17 5.923ZM7 9a1 1 0 0 1-2 0V7h2v2Zm0-5a2 2 0 1 1 4 0v1H7V4Zm6 5a1 1 0 1 1-2 0V7h2v2Z"/>
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Products</span>
+             </a>
+          </li>
+       </ul>
+    </div>
+ </nav>
+ 
+ <main class="p-4 sm:ml-64 text-center">
+    <form class="w-full max-w-sm" action="/editProduct/<%= product._id %>" method="post">
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="ProductName">
+              Product Name
+            </label>
+          </div>
+          <div class="md:w-2/3">
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" name="ProductName" id="ProductName" type="text" placeholder="KeyBox...">
+          </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="USDprice">
+              Price USD
+            </label>
+          </div>
+          <div class="md:w-2/3">
+            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" name="priceUSD" id="priceUSD" type="text" placeholder="$1000">
+          </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+            <div class="md:w-1/3">
+              <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="CADprice">
+                Price CAD
+              </label>
+            </div>
+            <div class="md:w-2/3">
+              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" name="priceCAD" id="priceCAD" type="text" placeholder="$1250">
+            </div>
+          </div>
+        <div class="md:flex md:items-center">
+          <div class="md:w-1/3"></div>
+          <div class="md:w-2/3">
+            <a href="/products">
+                <button class="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="add" value="" required>
+                    Submit
+                </button>
+            </a>
+          </div>
+        </div>
+      </form>
+ </main>
+ 
+</body>
+</html>
+

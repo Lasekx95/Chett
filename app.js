@@ -47,6 +47,36 @@ app.get('/products', async (req, res) => {
   }
 });
 
+app.get('/editProduct/:id', async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const product = await Product.findById(productId);
+    res.render('editProduct', { product });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.post('/editProduct/:id', async (req, res) => {
+  try {
+    const productId = req.params.id;
+    const { productName, priceUSD, priceCAD } = req.body;
+
+    // Update the product in the database
+    await Product.findByIdAndUpdate(productId, {
+      ProductName: productName,
+      priceUSD: priceUSD,
+      priceCAD: priceCAD,
+    });
+
+    res.redirect('/products');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 app.get('/deleteProduct/:id', async (req, res) => {
   try {
     const productId = req.params.id;

@@ -47,6 +47,17 @@ app.get('/products', async (req, res) => {
   }
 });
 
+app.get('/deleteProduct/:id', async (req, res) => {
+  try {
+    const productId = req.params.id;
+    await Product.findByIdAndRemove(productId);
+    res.redirect('/products');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 
 app.get('/', (req, res) => {
     res.render('home'); 

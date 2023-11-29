@@ -21,7 +21,7 @@ This is a prototype of a web based CMS application, focusing on the basic functi
 
 2. Customer catalog stored within a mongoDb, with content displayed via tables. Includes company name, contact person & info, as well as sales rep. @todo
 
-3. edit/delete functions for corresponding tables. @todo -Delete implemented on product catalog only
+3. edit/delete functions for corresponding tables. @todo -Product catalog is finished, need to do customer
 
 4. Customer profiles displaying bill & ship to addresses, contact info, sales rep as well as past purchases. @todo
 

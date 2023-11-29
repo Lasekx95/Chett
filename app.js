@@ -7,15 +7,16 @@ const app = express()
 const port = 4050;
 
 const Product = require('./models/product'); //importing productSchema from models folder
+const customer = require('./models/customer'); //importing customerSchema from models folder
 
 //middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // view engine setup
-app.set('view engine', 'ejs');
-app.set('views', 'views')
-app.set('layout', 'layout/main')
+app.set('view engine', 'ejs'); //set the view engine to ejs
+app.set('views', 'views') //set the views directory
+app.set('layout', 'layout/main') //set the layout directory
 
 //product controllers
 app.post('/productADD', async (req, res) => { //post request to add product

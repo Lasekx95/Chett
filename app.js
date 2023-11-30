@@ -9,7 +9,7 @@ const port = 4050;
 const Product = require('./models/product'); //importing productSchema from models folder
 const customer = require('./models/customer'); //importing customerSchema from models folder
 
-//middleware
+//middleware to parse the request body
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
